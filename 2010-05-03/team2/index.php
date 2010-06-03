@@ -13,13 +13,18 @@ function base33decode($str) {
 }
 
 function shorten($url) {
-  do {
-    // get microtime part
-    list ($time) = explode( ' ', microtime());
-    // $time is a unique value
-    // create shorter base33 representation
-    $short = base33encode($time);
-  } while (lookup($short) != null);
+  $url = preg_replace('|/$|', '', $url);
+  $short = reverse_lookup($url);
+  if (!$short) {
+    do {
+      // get microtime part
+      list ($time) = explode( ' ', microtime());
+      // $time is a unique value
+      // create shorter base33 representation
+      $short = base33encode($time);
+    } while (lookup($short) != null);
+    store($short, $url);
+  }
   return $short;
 }
 
@@ -38,6 +43,17 @@ function lookup($short) {
   }
 }
 
+function reverse_lookup($url) {
+  $qry = mysql_query("select * from urls where url = '$url'");
+  if ($qry) {
+    $res = mysql_fetch_assoc($qry);
+    return $res['shortened'];
+  } else {
+    echo mysql_error();
+    return null;
+  }
+}
+
 $db = mysql_connect('localhost', 'root', 'password');
 mysql_select_db('shorturls');
 
@@ -45,26 +61,26 @@ if (!isset($_SERVER['HTTP_USER_AGENT'])) {
   echo "tests\n";
   exit;
 } else {
-  if($_POST) {
-    $url = $_POST['url'];
-    $short = shorten($url);
-    store($short, $url);
-    echo $short;
-  }  elseif($url = lookup(substr($_SERVER["REQUEST_URI"], 1))) {
+  if($url = lookup(preg_replace('|^/|', '', $_SERVER["REQUEST_URI"]))) {
     header("Location: $url");
   } else {
-  ?>
-  <html>
+    if($_POST) {
+      $url = $_POST['url'];
+      $short = shorten($url);
+      echo $short;
+    }
+    ?>
+    <html>
     <head>
-      <title>Shortener</title>
-    </head>
-    <body>
-      <form method="post" action="">
-        <input type="text" name="url" value="" />
-        <button type="submit">Shorten</button>
-      </form>
-    </body>
-  </html>
+        <title>Shortener</title>
+      </head>
+      <body>
+        <form method="post" action="">
+          <input type="text" name="url" value="" />
+          <button type="submit">Shorten</button>
+        </form>
+      </body>
+    </html>
   <?php
   }
 }
