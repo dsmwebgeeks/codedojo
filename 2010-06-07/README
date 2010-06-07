@@ -1,0 +1,38 @@
+URLS:
+xml:
+http://dsmwebapps.appspot.com/wk2/xml/1
+http://dsmwebapps.appspot.com/wk2/xml/2
+http://dsmwebapps.appspot.com/wk2/xml/3
+example:
+<?xml version="1.0"?><dataset><date>2010-03-06</date><value>107109</value><date>2010-03-07</date><value>173612</value>
+
+csv:
+http://dsmwebapps.appspot.com/wk2/csv/1
+http://dsmwebapps.appspot.com/wk2/csv/2
+http://dsmwebapps.appspot.com/wk2/csv/3
+example:
+107109,2010-03-06
+173612,2010-03-07
+
+json:
+http://dsmwebapps.appspot.com/wk2/json/1
+http://dsmwebapps.appspot.com/wk2/json/2
+http://dsmwebapps.appspot.com/wk2/json/3
+example:
+{
+    "dataset": [
+        {"date": "2010-03-06", "value": 107109},
+        {"date": "2010-03-07", "value": 173612},
+
+jsonp:
+http://dsmwebapps.appspot.com/wk2/jsonp/1?jsonp=readData
+http://dsmwebapps.appspot.com/wk2/jsonp/2?jsonp=readData
+http://dsmwebapps.appspot.com/wk2/jsonp/3?jsonp=readData
+readData in the above examples can be the name of any callback you like. jQuery's getJSON method can be used like this:
+$.getJSON('http://dsmwebapps.appspot.com/wk2/jsonp/2?jsonp=?', function(data) { ... });
+example:
+readData({
+    "dataset": [
+        {"date": "2010-03-06", "value": 107109},
+        {"date": "2010-03-07", "value": 173612},
+
