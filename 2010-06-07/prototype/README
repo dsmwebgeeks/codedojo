@@ -1,0 +1,10 @@
+How it works:
+
+1. Use jquery to grab the data using jsonp to work around the browser's 
+   same orgin prolicy
+2. Loop through the data and make a table
+3. Use the jquery visualize plugin to make a canvas based bargraph 
+   from the html table
+
+cf. http://www.filamentgroup.com/lab/update_to_jquery_visualize_accessible_charts_with_html5_from_designing_with/
+
