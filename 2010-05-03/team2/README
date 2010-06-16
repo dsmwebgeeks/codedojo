@@ -1,5 +1,5 @@
-We are team 2, our idea was to _x_ and we found that _y_ and next time
-we'll do _z_.
-
-(please summarize what your code is doing and what you think about it)
-
+We are team 2, our idea was to generate urls without 0, 1, or 2 in
+them so that they aren't ambiguous for "o", "l", and "z".  and we
+found that we had a little trouble getting the mod_rewrite rule down.
+and had to look up a lot of php stuff that we usually rely on
+frameworks for.
