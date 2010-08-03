@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Dan Wardell's Reading Road Trip 2010</title>
+<link rel="stylesheet" type="text/css" href="includes/css/styles.css"/>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://diginc.us/jfeed/build/dist/jquery.jfeed.pack.js"></script>
+<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=true&amp;key=ABQIAAAAi29gySXP3vfmvlMlcmq9nhTKb4TVCPxDl5s5ARCAR4jplexUjxRGO7X30uYmA-8bjTlju1O1zMAaKA" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    if (GBrowserIsCompatible()) {
+   	 geocoder = new GClientGeocoder();
+   	 map = new GMap2(document.getElementById('map'));
+   	 map.addControl(new GSmallMapControl());
+   	 map.addControl(new GMapTypeControl());
+   	 map.setCenter(new GLatLng(41.582579601430346, -93.658447265625), 6);
+   	 map.enableScrollWheelZoom();
+   	 /*
+   	 GEvent.addListener(map, 'moveend', function() {
+   		 //alert(map.getCenter());
+   	 });
+   	 */
+    }
+});
+
+$(document).ready(function(){
+ $.get('map.rss', {}, function(xml){
+   $(xml).find('item').each(function(i){
+   	 var latLong = $.trim($(this).find("georss\\:point").text()).split(' ');
+   	 var date = $(this).find("pubDate").text();
+   	 var title = $(this).find("title").text();
+   	 var description = $(this).find("description").find("div").text();
+		 //$('#locations').append('<div id="location'+i+'"><p class="date">'+date+'</p><h2>'+titles+'</h2><p class="description">'+description+'</p><p class="more"><a href="http://maps.google.com/maps?q='+latLong[0]+','+latLong[1]+'">View Map</a></p><p class="directions"><a href="#">Get Directions</a></p></div>');
+		 alert(i);
+   });
+ });
+});
+</script>
+
+
+</head>
+
+<body>
+<div id="container">
+	<div id="header">
+		<h1>Dan Wardell's Reading Road Trip 2010</h1>
+	</div>
+	<div><a href="mailto:wardell@iptv.org" title="Send Email"><img src="images/contact.gif" width="178" height="64" alt="Contact Dan" /></a></div>
+	<div id="map" style="overflow: hidden; width:880px; height:400px"></div>
+   <div id="locations">
+     <div id="location1">
+      <p class="date">Monday, June 7</p>
+      <h2>Council Bluffs Public Library</h2>
+      <p class="description">Stories and adventure with Dan Wardell. Story time starts at 9 a.m. and lasts 40 minutes. Encore presentation at 10 a.m. Free admission. Open to the public. 400 Willow Avenue</p>
+      <p class="more"><a href="#">View Map</a></p>
+      <p class="directions"><a href="#">Get Directions</a></p>
+    </div>
+    <div id="location2">
+      <p class="date">Tuesday, June 8</p>
+      <h2>Hamburg Public Library</h2>
+      <p class="description">Stories and adventure with Dan Wardell. Story time starts at 10 a.m. and lasts 40 minutes. Free admission. Open to the public. 1301 Main Street</p>
+      <p class="more"><a href="#">View Map</a></p>
+      <p class="directions"><a href="#">Get Directions</a></p>
+    </div>
+    <div id="location3">
+      <p class="date">Tuesday, June 8</p>
+      <h2>Essex Lied Public Library</h2>
+      <p class="description">Stories and adventure with Dan Wardell. Story time starts at 1 p.m. and lasts 40 minutes. Free admission. Open to the public. 508 Iowa Avenue</p>
+      <p class="more"><a href="#">View Map</a></p>
+      <p class="directions"><a href="#">Get Directions</a></p>
+    </div>
+    <div id="location4">
+      <p class="date">Wednesday, June 9</p>
+      <h2>Lenox City Public Library</h2>
+      <p class="description">Stories and adventure with Dan Wardell. Story time starts at 10 a.m. and lasts 40 minutes. Free admission. Open to the public. 101 North Main</p>
+      <p class="more"><a href="#">View Map</a></p>
+      <p class="directions"><a href="#">Get Directions</a></p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

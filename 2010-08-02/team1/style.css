@@ -1,0 +1,17 @@
+body {font-family:Tahoma, Geneva, sans-serif;width:100%;}
+#accordion {width:100%;padding:0;margin:1em 0;}
+#accordion div {padding:0;margin:0;}
+h3 {-moz-border-radius: 5px; -webkit-border-radius: 5px;background:#666;padding:.5em;border:1px solid #000;}
+h3 a {color:#FFF;font-size:125%;text-decoration:none;border-bottom:1px solid #666;}
+h3 a:before {content: " + ";}
+   h3 a span {display:block;color:#FFF;font-size:100%;}
+#accordion p {color:#666;font-size:80%;}
+#accordion .even {background:#ccc;}
+#sorter {background:#ccc;padding:.5em;}
+#sorter a {padding:.5em;margin:0 .5em;color:#000;border-left:1px solid #000;}
+#sorter a:last-child {border-right:1px solid #000;}
+#pages {margin:1em 0;}
+#pages a {color:#000;padding:1em;margin:.2em;background:#CCC}
+.map {color:#000;display:block;-moz-border-radius: 5px; -webkit-border-radius: 5px;background:#ccc;width:auto;padding:.5em;margin:.5em 0;box-shadow:10px 10px 20px #000;
+-webkit-box-shadow:0px 0px 5px #000;
+-moz-box-shadow: 0px 0px 5px #000;}
