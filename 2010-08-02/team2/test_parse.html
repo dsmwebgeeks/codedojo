@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="includeds/jParse.js"></script>
+<script type="text/javascript">
+function start(){
+    jQuery('#trip-data').html('<img alt="Content Loading" src="ajax-loader.gif" />');
+}
+function finish(){
+    jQuery('#trip-data').remove();
+}
+$(function(){
+    $('#ajax-cont').jParse({
+        ajaxOpts: {url: 'map.rss'},
+        elementTag: ['guid', 'title', 'description', 'georss:point'],
+        output: ' <div class="feed-entry"><h4><a href="jpet01">jpet00</a></h4><p><a href="jpet4">jpet03 Comment(s)</a><p>jpet02</p></p></div>',
+				output: '<div id="jpet00">
+		<p class="date">Monday, June 7</p>
+		<h2>jpet01</h2>
+		<p class="description">jpet02/p>
+		<p class="more"><a href="http://maps.google.com/maps?q=jpet03">View Map</a></p>
+	</div>',
+        precallback: start,
+        callback: finish
+    });
+});
+</script>
+<link rel="stylesheet" type="text/css" href="includes/css/styles.css"/>
+</head>
+<body>
+
+
+<div id="trip-data" style="text-align: center; margin: 15px 0 0 0;">
+</div><!--/#trip-data-->
+<div id="ajax-cont"></div><!--/#demo-cont-->
+                        
+
+
+</body>
+</html>

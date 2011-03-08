@@ -1,0 +1,204 @@
+CHALLENGE:
+
+Create a mobile website for Dan Wardall's Reading Road Trip.
+Dan is a TV personality for the PBS Kids TV station and visits
+libraries around the state of IA. We need to make a website that
+will help parents find when the events are and the locations.
+
+Two groups of four people participated, their code is
+included in the folders herein.
+
+The data for the challenge is included below.
+
+Dan Wardell's Reading Road Trip 2010
+http://blogs.iptv.org/blogs/dantastic/dans-reading-road-trip-map/
+	
+Reading Road Trip 2010: Council Bluffs Public Library
+Monday, June 7 Stories and adventure with Dan Wardell. Story time starts at 9 a.m. and lasts 40 minutes. Encore presentation at 10 a.m. Free admission. Open to the public. 
+400 Willow Avenue
+	
+Reading Road Trip 2010: Hamburg Public Library
+Tuesday, June 8 Stories and adventure with Dan Wardell. Story time starts at 10 a.m. and lasts 40 minutes. Free admission. Open to the public. 1301 Main Street
+	
+Reading Road Trip 2010: Essex Lied Public Library
+Tuesday, June 8 Stories and adventure with Dan Wardell. Story time starts at 1 p.m. and lasts 40 minutes. Free admission. Open to the public. 508 Iowa Avenue
+	
+Reading Road Trip 2010: Lenox City Public Library
+Wednesday, June 9 Stories and adventure with Dan Wardell. Story time starts at 10 a.m. and lasts 40 minutes. Free admission. Open to the public. 101 North Main
+	
+Reading Road Trip 2010: Lamoni Public Library
+Wednesday, June 9 Stories and adventure with Dan Wardell. Story time starts at 1:30 p.m. and lasts 40 minutes. Encore presentation at 2:30 p.m. Free admission. Open to the public. 301 West Main
+	
+Reading Road Trip 2010: Murray Public Library
+Thursday, June 10 Stories and adventure with Dan Wardell. Story time starts at 10 a.m. and lasts 40 minutes. Free admission. Open to the public. 416 Maple Street
+	
+Reading Road Trip 2010: Moulton Public Library
+Thursday, June 10 Stories and adventure with Dan Wardell. Story time starts at 2 p.m. and lasts 40 minutes. Free admission. Open to the public. 123 Main Street
+	
+Reading Road Trip 2010: Schleswig Library
+Monday, June 14 Stories and adventure with Dan Wardell. Story time starts at 10 a.m. and lasts 40 minutes. Free admission. Open to the public. 202 Cedar Street
+	
+Reading Road Trip 2010: Kimballton Library
+Monday, June 14 Stories and adventure with Dan Wardell. Story time starts at 1:30 p.m. and lasts 40 minutes. Free admission. Open to the public. 118 Main Street
+	
+Reading Road Trip 2010: Storm Lake City Public Library
+Tuesday, June 15 Stories and adventure with Dan Wardell. Story time starts at 10 a.m. and lasts 40 minutes. Encore presentation at 11 a.m. Free admission. Open to the public. 609 Cayuga Street
+	
+Reading Road Trip 2010: Lake City Public Library
+Tuesday, June 15 Stories and adventure with Dan Wardell. Story time starts at 2 p.m. and lasts 40 minutes. Free admission. Open to the public. 110 E. Washington Street
+	
+Reading Road Trip 2010: Eddyville Public Library
+Wednesday, June 16 Stories and adventure with Dan Wardell. Story time starts at 9:30 a.m. and lasts 40 minutes. Encore presentation at 10:30 a.m. Free admission. Open to the public. 202 South Second S...
+	
+Reading Road Trip 2010: Pella Public Library
+Wednesday, June 16 Stories and adventure with Dan Wardell. Story time starts at 1:30 p.m. and lasts 40 minutes. Encore presentation at 2:30 p.m. Free admission. Open to the public. 603 Main Street
+	
+Reading Road Trip 2010: Ankeny Public Library
+Thursday, June 17 Stories and adventure with Dan Wardell. Story time starts at 10 a.m. and lasts 40 minutes. Encore presentation at 11 a.m. Free admission. Open to the public. 1210 Northwest Prairie R...
+	
+Reading Road Trip 2010: Colfax Public Library
+Thursday, June 17 Stories and adventure with Dan Wardell. Story time starts at 2 p.m. and lasts 40 minutes. Free admission. Open to the public. 25 West Division Street
+	
+Reading Road Trip 2010: Le Mars Public Library
+Monday, June 21 Stories and adventure with Dan Wardell. Story time starts at 10 a.m. and lasts 40 minutes. Encore presentation at 11 a.m. Free admission. Open to the public. 46 First Street Southwest
+	
+Reading Road Trip 2010: Sioux City Public Library
+Monday, June 21 Stories and adventure with Dan Wardell. Story time starts at 1:30 p.m. and lasts 40 minutes. Encore presentation at 2:30 p.m. Free admission. Open to the public. 4005 Morningside Ave.
+	
+Reading Road Trip 2010: Hawarden Public Library
+Tuesday, June 22 Stories and adventure with Dan Wardell. Story time starts at 10 a.m. and lasts 40 minutes. Encore presentation at 11 a.m. Free admission. Open to the public. 803 10th Street
+	
+Reading Road Trip 2010: Orange City Library
+Tuesday, June 22 Stories and adventure with Dan Wardell. Story time starts at 1:30 p.m. and lasts 40 minutes. Encore presentation at 2:30 p.m. Free admission. Open to the public. 112 Albany Southeast
+	
+Reading Road Trip 2010: Sanborn Public Library
+Wednesday, June 23 Stories and adventure with Dan Wardell. Story time starts at 10 a.m. and lasts 40 minutes. Free admission. Open to the public. 407 Main Street
+	
+Reading Road Trip 2010: Inwood Public Library
+Wednesday, June 23 Stories and adventure with Dan Wardell. Story time starts at 1 p.m. and lasts 40 minutes. Free admission. Open to the public. 103 South Main
+	
+Reading Road Trip 2010: Spirit Lake Public Library
+Thursday, June 24 Stories and adventure with Dan Wardell. Story time starts at 10 a.m. and lasts 40 minutes. Encore presentation at 11 a.m. Free admission. Open to the public. 702 16th Street
+	
+Reading Road Trip 2010: Laurens Public Library
+Thursday, June 24 Stories and adventure with Dan Wardell. Story time starts at 2 p.m. and lasts 40 minutes. Free admission. Open to the public. 273 North Third Street
+	
+Reading Road Trip 2010: Des Moines Public Library
+Monday, June 28 Stories and adventure with Dan Wardell. Story time starts at 9:30 a.m. and lasts 40 minutes. Encore presentation at 10:30 a.m. Free admission. Open to the public. 1000 Grand Avenue
+	
+Reading Road Trip 2010: Ames Public Library
+Monday, June 28 Stories and adventure with Dan Wardell. Story time starts at 1:30 p.m. and lasts 40 minutes. Encore presentation at 2:30 p.m. Free admission. Open to the public. 515 Douglas
+	
+Reading Road Trip 2010: Iowa Falls Public Library
+Tuesday, June 29 Stories and adventure with Dan Wardell. Story time starts at 12:30 p.m. and lasts 40 minutes. Encore presentation at 1:30 p.m. Free admission. Open to the public. 921 Washington Ave.
+	
+Reading Road Trip 2010: Algona Public Library
+Tuesday, June 29 Stories and adventure with Dan Wardell. Story time starts at 4:30 p.m. and lasts 40 minutes. Encore presentation at 5:30 p.m. Free admission. Open to the public. 210 North Phillips
+	
+Reading Road Trip 2010: Belmond Public Library
+Wednesday, June 30 Stories and adventure with Dan Wardell. Story time starts at 9:30 a.m. and lasts 40 minutes. Encore presentation at 10:30 a.m. Free admission. Open to the public. 440 East Main
+	
+Reading Road Trip 2010: Mason City Public Library
+Wednesday, June 30 Stories and adventure with Dan Wardell. Story time starts at 1 p.m. and lasts 40 minutes. Encore presentation at 2 p.m. Free admission. Open to the public. 225 Second Street Southea...
+	
+Reading Road Trip 2010: Alta Vista Public Library
+Thursday, July 1 Stories and adventure with Dan Wardell. Story time starts at 10 a.m. and lasts 40 minutes. Free admission. Open to the public. 203 South White Avenue
+	
+Reading Road Trip 2010: Decorah Public Library
+Thursday, July 1 Stories and adventure with Dan Wardell. Story time starts at 1 p.m. and lasts 40 minutes. Encore presentation at 2 p.m. Free admission. Open to the public. 202 Winnebago Street
+	
+Reading Road Trip 2010: West Union Public Library
+Friday, July 2 Stories and adventure with Dan Wardell. Story time starts at 10 a.m. and lasts 40 minutes. Encore presentation at 11 a.m. Free admission. Open to the public. 210 North Vine Street
+	
+Reading Road Trip 2010: Maynard Public Library
+Friday, July 2 Stories and adventure with Dan Wardell. Story time starts at 1 p.m. and lasts 40 minutes. Free admission. Open to the public. 225 Main Street West
+	
+Reading Road Trip 2010: Keota Public Library
+Tuesday, July 6 Stories and adventure with Dan Wardell. Story time starts at 10 a.m. and lasts 40 minutes. Free admission. Open to the public. 109 East Washington Avenue
+	
+Reading Road Trip 2010: Keosauqua Public Library
+Tuesday, July 6 Stories and adventure with Dan Wardell. Story time starts at 1:30 p.m. and lasts 40 minutes. Free admission. Open to the public. 608 1st Street
+	
+Reading Road Trip 2010: Grimes Public Library
+Wednesday, July 7 Stories and adventure with Dan Wardell. Story time starts at 10 a.m. and lasts 40 minutes. Encore presentation at 11 a.m. Free admission. Open to the public. 200 Northwest James
+	
+Reading Road Trip 2010: Clive Public Library
+Wednesday, July 7 Stories and adventure with Dan Wardell. Story time starts at 1:30 p.m. and lasts 40 minutes. Encore presentation at 2:30 p.m. Free admission. Open to the public. 1900 NW 114th Street
+	
+Reading Road Trip 2010: Fort Dodge Public Library
+Thursday, July 8 Stories and adventure with Dan Wardell. Story time starts at 9:30 a.m. and lasts 40 minutes. Encore presentation at 10:30 a.m. Free admission. Open to the public. 1576 Johnson Avenue
+	
+Reading Road Trip 2010: Casey Public Library
+Thursday, July 8 Stories and adventure with Dan Wardell. Story time starts at 2 p.m. and lasts 40 minutes. Free admission. Open to the public. 604 Antique Country Drive
+	
+Reading Road Trip 2010: Cedar Rapids Public Library
+Friday, July 9 Stories and adventure with Dan Wardell. Story time starts at 10 a.m. and lasts 40 minutes. Encore presentation at 11 a.m. Free admission. Open to the public. Westdale Mall Branch, 2600 Edgewood Road SW
+	
+Reading Road Trip 2010: Keokuk Public Library
+Monday, July 12 Stories and adventure with Dan Wardell. Story time starts at 9:30 a.m. and lasts 40 minutes. Encore presentation at 10:30 a.m. Free admission. Open to the public. 210 North Fifth Street
+	
+Reading Road Trip 2010: Burlington Public Library
+Monday, July 12 Stories and adventure with Dan Wardell. Story time starts at 1:30 p.m. and lasts 40 minutes. Encore presentation at 2:30 p.m. Free admission. Open to the public. 210 Court Street
+	
+Reading Road Trip 2010: Mediapolis Public Library
+Tuesday, July 13 Stories and adventure with Dan Wardell. Story time starts at 10 a.m. and lasts 40 minutes. Free admission. Open to the public. 128 North Orchard Street
+	
+Reading Road Trip 2010: Musser Public Library
+Tuesday, July 13 Stories and adventure with Dan Wardell. Story time starts at 1 p.m. and lasts 40 minutes. Encore presentation at 2 p.m. Free admission. Open to the public. 304 Iowa Avenue
+	
+Reading Road Trip 2010: Bettendorf Public Library
+Wednesday, July 14 Stories and adventure with Dan Wardell. Story time starts at 10 a.m. and lasts 40 minutes. Encore presentation at 11 a.m. Free admission. Open to the public. 2950 Learning Campus Drive
+	
+Reading Road Trip 2010: Davenport Public Library
+Wednesday, July 14 Stories and adventure with Dan Wardell. Story time starts at 1 p.m. and lasts 40 minutes. Encore presentation at 2 p.m. Free admission. Open to the public. 3000 North Fairmont
+	
+Reading Road Trip 2010: Eldridge Public Library
+Thursday, July 15 Stories and adventure with Dan Wardell. Story time starts at 9:30 a.m. and lasts 40 minutes. Encore presentation at 10:30 a.m. Free admission. Open to the public. 200 North 6th Avenue
+	
+Reading Road Trip 2010: Maquoketa Public Library
+Thursday, July 15 Stories and adventure with Dan Wardell. Story time starts at 1:30 p.m. and lasts 40 minutes. Encore presentation at 2:30 p.m. Free admission. Open to the public. 126 South Second
+	
+Reading Road Trip 2010: Iowa City Public Library
+Sunday, July 18 Stories and adventure with Dan Wardell. Story time starts at 1:30 p.m. and lasts 40 minutes. Encore presentation at 2:30 p.m. Free admission. Open to the public. 123 South Linn
+	
+Reading Road Trip 2010: Dubuque Public Library
+Monday, July 19 Stories and adventure with Dan Wardell. Story time starts at 9:30 a.m. and lasts 40 minutes. Encore presentation at 11 a.m. Free admission. Open to the public. 360 West 11th Street
+	
+Reading Road Trip 2010: Dyersville Public Library
+Monday, July 19 Stories and adventure with Dan Wardell. Story time starts at 1:30 p.m. and lasts 40 minutes. Encore presentation at 2:30 p.m. Free admission. Open to the public. 320 1st Avenue East
+	
+Reading Road Trip 2010: Waterloo Public Library
+Tuesday, July 20 Stories and adventure with Dan Wardell. Story time starts at 9:30 a.m. and lasts 40 minutes. Encore presentation at 10:30 a.m. Free admission. Open to the public. 415 Commercial Street
+	
+Reading Road Trip 2010: Denver Public Library
+Tuesday, July 20 Stories and adventure with Dan Wardell. Story time starts at 1 p.m. and lasts 40 minutes. Encore presentation at 2 p.m. Free admission. Open to the public. 100 Washington
+	
+Reading Road Trip 2010: Cedar Falls Public Library
+Wednesday, July 21 Stories and adventure with Dan Wardell. Story time starts at 9:30 a.m. and lasts 40 minutes. Encore presentation at 10:30 a.m. Free admission. Open to the public. 524 Main Street
+	
+Reading Road Trip 2010: Vinton Public Library
+Wednesday, July 21 Stories and adventure with Dan Wardell. Story time starts at 1:30 p.m. and lasts 40 minutes. Encore presentation at 2:30 p.m. Free admission. Open to the public. 510 2nd Avenue
+	
+Reading Road Trip 2010: Johnston Public Library
+Thursday, July 22 Stories and adventure with Dan Wardell. Story time starts at 10:15 a.m. and lasts 40 minutes. Encore presentation at 11:15 a.m. Free admission. Open to the public. 6700 Merle Hay Road
+	
+Reading Road Trip 2010: Boone Public Library
+Thursday, July 22 Stories and adventure with Dan Wardell. Story time starts at 1:30 p.m. and lasts 40 minutes. Encore presentation at 2:30 p.m. Free admission. Open to the public. 702 Greene Street
+	
+Reading Road Trip 2010: Marshalltown Public Library
+Monday, July 26 Stories and adventure with Dan Wardell. Story time starts at 9:15 a.m. and lasts 40 minutes. Encore presentation at 10:15 a.m. Free admission. Open to the public. 105 West Boone Street
+	
+Reading Road Trip 2010: Urbandale Public Library
+Monday, July 26 Stories and adventure with Dan Wardell. Story time starts at 1:30 p.m. and lasts 40 minutes. Encore presentation at 2:30 p.m. Free admission. Open to the public. 3520 86th
+	
+Reading Road Trip 2010: Coralville Public Library
+Tuesday, July 27 Stories and adventure with Dan Wardell. Story time starts at 10 a.m. and lasts 40 minutes. Encore presentation at 11 a.m. Free admission. Open to the public. 1401 Fifth Street
+	
+Reading Road Trip 2010: Newton Public Library
+Tuesday, July 27 Stories and adventure with Dan Wardell. Story time starts at 2 p.m. and lasts 40 minutes. Encore presentation at 3 p.m. Free admission. Open to the public. 100 North Third Avenue West
+	
+Reading Road Trip 2010: Le Grand Public Library
+Wednesday, July 28 Stories and adventure with Dan Wardell. Story time starts at 9:30 a.m. and lasts 40 minutes. Free admission. Open to the public. 204 North Vine Street
+	
+Reading Road Trip 2010: Woden Public Library
+Thursday, July 29 Stories and adventure with Dan Wardell. Story time starts at 9:30 a.m. and lasts 40 minutes. Free admission. Open to the public. 304 Main Street

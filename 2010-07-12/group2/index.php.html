@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>MadHatterz 1337 Design Agency</title>
+<link rel="stylesheet" href="css/960gs/css/uncompressed/reset.css" />
+<link rel="stylesheet" href="css/960gs/css/uncompressed/text.css" />
+<link rel="stylesheet" href="css/960gs/css/uncompressed/960.css" />
+<link rel="stylesheet" href="css/960gs/css/uncompressed/demo.css" />
+<script src="js/jquery-1.4.2.js"></script>
+<script src="js/scrollto/jquery.scrollTo.js"></script>
+<script>
+
+</script>
+</head>
+<body>
+<h1 id="top">
+	<a href="/">MadHatterz 1337 Design Agency</a>
+</h1>
+<div class="container_12" id="floatdiv" style="color:red;position:absolute; width:200px;height:50px;left:0px;top:0px; padding:16px;background:blue; border:2px solid #2266AA; z-index:100">
+<ul>
+<li><a href="#top" onclick="$.scrollTo('#top', 800);return false">Top</a></li>
+<li><a href="#c1" onclick="$.scrollTo('#c1', 800);return false">Container 1</a></li>
+<li><a href="#c2" onclick="$.scrollTo('#c2', 1200);return false;">Container 2</a></li>
+<li><a href="#c3" onclick="$.scrollTo('#c3', 1600);return false">Container 3</a></li>
+<li><a href="#c4" onclick="$.scrollTo('#c4', 2000);return false">Container 4</a></li>
+
+</ul>
+</div>
+<script type="text/javascript"><!--
+/* Script by: www.jtricks.com
+ * Version: 20071017
+ * Latest version:
+ * www.jtricks.com/javascript/navigation/floating.html
+ */
+var floatingMenuId = 'floatdiv';
+var floatingMenu =
+{
+    targetX: -250,
+    targetY: 10,
+
+    hasInner: typeof(window.innerWidth) == 'number',
+    hasElement: typeof(document.documentElement) == 'object'
+        && typeof(document.documentElement.clientWidth) == 'number',
+
+    menu:
+        document.getElementById
+        ? document.getElementById(floatingMenuId)
+        : document.all
+          ? document.all[floatingMenuId]
+          : document.layers[floatingMenuId]
+};
+
+floatingMenu.move = function ()
+{
+    floatingMenu.menu.style.left = floatingMenu.nextX + 'px';
+    floatingMenu.menu.style.top = floatingMenu.nextY + 'px';
+}
+
+floatingMenu.computeShifts = function ()
+{
+    var de = document.documentElement;
+
+    floatingMenu.shiftX =  
+        floatingMenu.hasInner  
+        ? pageXOffset  
+        : floatingMenu.hasElement  
+          ? de.scrollLeft  
+          : document.body.scrollLeft;  
+    if (floatingMenu.targetX < 0)
+    {
+        floatingMenu.shiftX +=
+            floatingMenu.hasElement
+            ? de.clientWidth
+            : document.body.clientWidth;
+    }
+
+    floatingMenu.shiftY = 
+        floatingMenu.hasInner
+        ? pageYOffset
+        : floatingMenu.hasElement
+          ? de.scrollTop
+          : document.body.scrollTop;
+    if (floatingMenu.targetY < 0)
+    {
+        if (floatingMenu.hasElement && floatingMenu.hasInner)
+        {
+            // Handle Opera 8 problems
+            floatingMenu.shiftY +=
+                de.clientHeight > window.innerHeight
+                ? window.innerHeight
+                : de.clientHeight
+        }
+        else
+        {
+            floatingMenu.shiftY +=
+                floatingMenu.hasElement
+                ? de.clientHeight
+                : document.body.clientHeight;
+        }
+    }
+}
+
+floatingMenu.calculateCornerX = function()
+{
+    if (floatingMenu.targetX != 'center')
+        return floatingMenu.shiftX + floatingMenu.targetX;
+
+    var width = parseInt(floatingMenu.menu.offsetWidth);
+
+    var cornerX =
+        floatingMenu.hasElement
+        ? (floatingMenu.hasInner
+           ? pageXOffset
+           : document.documentElement.scrollLeft) + 
+          (document.documentElement.clientWidth - width)/2
+        : document.body.scrollLeft + 
+          (document.body.clientWidth - width)/2;
+    return cornerX;
+};
+
+floatingMenu.calculateCornerY = function()
+{
+    if (floatingMenu.targetY != 'center')
+        return floatingMenu.shiftY + floatingMenu.targetY;
+
+    var height = parseInt(floatingMenu.menu.offsetHeight);
+
+    // Handle Opera 8 problems
+    var clientHeight = 
+        floatingMenu.hasElement && floatingMenu.hasInner
+        && document.documentElement.clientHeight 
+            > window.innerHeight
+        ? window.innerHeight
+        : document.documentElement.clientHeight
+
+    var cornerY =
+        floatingMenu.hasElement
+        ? (floatingMenu.hasInner  
+           ? pageYOffset
+           : document.documentElement.scrollTop) + 
+          (clientHeight - height)/2
+        : document.body.scrollTop + 
+          (document.body.clientHeight - height)/2;
+    return cornerY;
+};
+
+floatingMenu.doFloat = function()
+{
+    // Check if reference to menu was lost due
+    // to ajax manipuations
+    if (!floatingMenu.menu)
+    {
+        menu = document.getElementById
+            ? document.getElementById(floatingMenuId)
+            : document.all
+              ? document.all[floatingMenuId]
+              : document.layers[floatingMenuId];
+
+        initSecondary();
+    }
+
+    var stepX, stepY;
+
+    floatingMenu.computeShifts();
+
+    var cornerX = floatingMenu.calculateCornerX();
+
+    var stepX = (cornerX - floatingMenu.nextX) * .07;
+    if (Math.abs(stepX) < .5)
+    {
+        stepX = cornerX - floatingMenu.nextX;
+    }
+
+    var cornerY = floatingMenu.calculateCornerY();
+
+    var stepY = (cornerY - floatingMenu.nextY) * .07;
+    if (Math.abs(stepY) < .5)
+    {
+        stepY = cornerY - floatingMenu.nextY;
+    }
+
+    if (Math.abs(stepX) > 0 ||
+        Math.abs(stepY) > 0)
+    {
+        floatingMenu.nextX += stepX;
+        floatingMenu.nextY += stepY;
+        floatingMenu.move();
+    }
+
+    setTimeout('floatingMenu.doFloat()', 20);
+};
+
+// addEvent designed by Aaron Moore
+floatingMenu.addEvent = function(element, listener, handler)
+{
+    if(typeof element[listener] != 'function' || 
+       typeof element[listener + '_num'] == 'undefined')
+    {
+        element[listener + '_num'] = 0;
+        if (typeof element[listener] == 'function')
+        {
+            element[listener + 0] = element[listener];
+            element[listener + '_num']++;
+        }
+        element[listener] = function(e)
+        {
+            var r = true;
+            e = (e) ? e : window.event;
+            for(var i = element[listener + '_num'] -1; i >= 0; i--)
+            {
+                if(element[listener + i](e) == false)
+                    r = false;
+            }
+            return r;
+        }
+    }
+
+    //if handler is not already stored, assign it
+    for(var i = 0; i < element[listener + '_num']; i++)
+        if(element[listener + i] == handler)
+            return;
+    element[listener + element[listener + '_num']] = handler;
+    element[listener + '_num']++;
+};
+
+floatingMenu.init = function()
+{
+    floatingMenu.initSecondary();
+    floatingMenu.doFloat();
+};
+
+// Some browsers init scrollbars only after
+// full document load.
+floatingMenu.initSecondary = function()
+{
+    floatingMenu.computeShifts();
+    floatingMenu.nextX = floatingMenu.calculateCornerX();
+    floatingMenu.nextY = floatingMenu.calculateCornerY();
+    floatingMenu.move();
+}
+
+if (document.layers)
+    floatingMenu.addEvent(window, 'onload', floatingMenu.init);
+else
+{
+    floatingMenu.init();
+    floatingMenu.addEvent(window, 'onload',
+        floatingMenu.initSecondary);
+}
+
+//--></script>
+
+<div class="container_12" id="c1">
+	<h2>
+		12 Column Grid
+	</h2>
+	<div class="grid_12">
+		<p>
+			940
+		</p>
+	</div>
+	<!-- end .grid_12 -->
+	<div class="clear"></div>
+	<div class="grid_1">
+		<p>
+			60
+		</p>
+	</div>
+	<!-- end .grid_1 -->
+	<div class="grid_11">
+		<p>
+			860
+		</p>
+	</div>
+	<!-- end .grid_11 -->
+	<div class="clear"></div>
+	<div class="grid_2">
+		<p>
+			140
+		</p>
+	</div>
+	<!-- end .grid_2 -->
+	<div class="grid_10">
+		<p>
+			780
+		</p>
+	</div>
+	<!-- end .grid_10 -->
+	<div class="clear"></div>
+	<div class="grid_3">
+		<p>
+			220
+		</p>
+	</div>
+	<!-- end .grid_3 -->
+	<div class="grid_9">
+		<p>
+			700
+		</p>
+	</div>
+	<!-- end .grid_9 -->
+	<div class="clear"></div>
+	<div class="grid_4">
+		<p>
+			300
+		</p>
+	</div>
+	<!-- end .grid_4 -->
+	<div class="grid_8">
+		<p>
+			620
+		</p>
+	</div>
+	<!-- end .grid_8 -->
+	<div class="clear"></div>
+	<div class="grid_5">
+		<p>
+			380
+		</p>
+	</div>
+	<!-- end .grid_5 -->
+	<div class="grid_7">
+		<p>
+			540
+		</p>
+	</div>
+	<!-- end .grid_7 -->
+	<div class="clear"></div>
+	<div class="grid_6">
+		<p>
+			460
+		</p>
+	</div>
+	<!-- end .grid_6 -->
+	<div class="grid_6">
+		<p>
+			460
+		</p>
+	</div>
+	<!-- end .grid_6 -->
+	<div class="clear"></div>
+	<div class="grid_1 suffix_11">
+		<p>
+			60
+		</p>
+	</div>
+	<!-- end .grid_1.suffix_11 -->
+	<div class="clear"></div>
+	<div class="grid_1 prefix_1 suffix_10">
+		<p>
+			60
+		</p>
+	</div>
+	<!-- end .grid_1.prefix_1.suffix_10 -->
+	<div class="clear"></div>
+	<div class="grid_1 prefix_2 suffix_9">
+		<p>
+			60
+		</p>
+	</div>
+	<!-- end .grid_1.prefix_2.suffix_9 -->
+	<div class="clear"></div>
+	<div class="grid_1 prefix_3 suffix_8">
+		<p>
+			60
+		</p>
+	</div>
+	<!-- end .grid_1.prefix_3.suffix_8 -->
+	<div class="clear"></div>
+	<div class="grid_1 prefix_4 suffix_7">
+		<p>
+			60
+		</p>
+	</div>
+	<!-- end .grid_1.prefix_4.suffix_7 -->
+	<div class="clear"></div>
+	<div class="grid_1 prefix_5 suffix_6">
+		<p>
+			60
+		</p>
+	</div>
+	<!-- end .grid_1.prefix_5.suffix_6 -->
+	<div class="clear"></div>
+	<div class="grid_1 prefix_6 suffix_5">
+		<p>
+			60
+		</p>
+	</div>
+	<!-- end .grid_1.prefix_6.suffix_5 -->
+	<div class="clear"></div>
+	<div class="grid_1 prefix_7 suffix_4">
+		<p>
+			60
+		</p>
+	</div>
+	<!-- end .grid_1.prefix_7.suffix_4 -->
+	<div class="clear"></div>
+	<div class="grid_1 prefix_8 suffix_3">
+		<p>
+			60
+		</p>
+	</div>
+	<!-- end .grid_1.prefix_8.suffix_3 -->
+	<div class="clear"></div>
+	<div class="grid_1 prefix_9 suffix_2">
+		<p>
+			60
+		</p>
+	</div>
+	<!-- end .grid_1.prefix_9.suffix_2 -->
+	<div class="clear"></div>
+	<div class="grid_1 prefix_10 suffix_1">
+		<p>
+			60
+		</p>
+	</div>
+	<!-- end .grid_1.prefix_10.suffix_1 -->
+	<div class="clear"></div>
+	<div class="grid_1 prefix_11">
+		<p>
+			60
+		</p>
+	</div>
+	<!-- end .grid_1.prefix_11 -->
+	<div class="clear"></div>
+	<div class="grid_6 push_6">
+		<div class="grid_1 alpha">
+			<p>
+				60
+			</p>
+		</div>
+		<!-- end .grid_1.alpha -->
+		<div class="grid_5 omega">
+			<p>
+				380
+			</p>
+		</div>
+		<!-- end .grid_5.omega -->
+		<div class="clear"></div>
+		<div class="grid_3 alpha">
+			<p>
+				220
+			</p>
+		</div>
+		<!-- end .grid_3.alpha -->
+		<div class="grid_3 omega">
+			<p>
+				220
+			</p>
+		</div>
+		<!-- end .grid_3.omega -->
+		<div class="clear"></div>
+	</div>
+	<!-- end .grid_6.push_6 -->
+	<div class="grid_6 pull_6">
+		<div class="grid_3 alpha">
+			<p>
+				220
+			</p>
+		</div>
+		<!-- end .grid_3.alpha -->
+		<div class="grid_3 omega">
+			<p>
+				220
+			</p>
+		</div>
+		<!-- end .grid_3.omega -->
+		<div class="clear"></div>
+		<div class="grid_1 alpha">
+			<p>
+				60
+			</p>
+		</div>
+		<!-- end .grid_1.alpha -->
+		<div class="grid_5 omega">
+			<p>
+				380
+			</p>
+		</div>
+		<!-- end .grid_5.omega -->
+		<div class="clear"></div>
+	</div>
+	<!-- end .grid_6.pull_6 -->
+	<div class="clear"></div>
+</div>
+<!-- end .container_12 -->
+<div class="container_12" id="c2">
+	<h2>
+		12 Column Grid
+	</h2>
+	<div class="grid_12">
+		<p>
+			940
+		</p>
+	</div>
+	<!-- end .grid_12 -->
+	<div class="clear"></div>
+	<div class="grid_1">
+		<p>
+			60
+		</p>
+	</div>
+	<!-- end .grid_1 -->
+	<div class="grid_11">
+		<p>
+			860
+		</p>
+	</div>
+	<!-- end .grid_11 -->
+	<div class="clear"></div>
+	<div class="grid_2">
+		<p>
+			140
+		</p>
+	</div>
+	<!-- end .grid_2 -->
+	<div class="grid_10">
+		<p>
+			780
+		</p>
+	</div>
+	<!-- end .grid_10 -->
+	<div class="clear"></div>
+	<div class="grid_3">
+		<p>
+			220
+		</p>
+	</div>
+	<!-- end .grid_3 -->
+	<div class="grid_9">
+		<p>
+			700
+		</p>
+	</div>
+	<!-- end .grid_9 -->
+	<div class="clear"></div>
+	<div class="grid_4">
+		<p>
+			300
+		</p>
+	</div>
+	<!-- end .grid_4 -->
+	<div class="grid_8">
+		<p>
+			620
+		</p>
+	</div>
+	<!-- end .grid_8 -->
+	<div class="clear"></div>
+	<div class="grid_5">
+		<p>
+			380
+		</p>
+	</div>
+	<!-- end .grid_5 -->
+	<div class="grid_7">
+		<p>
+			540
+		</p>
+	</div>
+	<!-- end .grid_7 -->
+	<div class="clear"></div>
+	<div class="grid_6">
+		<p>
+			460
+		</p>
+	</div>
+	<!-- end .grid_6 -->
+	<div class="grid_6">
+		<p>
+			460
+		</p>
+	</div>
+	<!-- end .grid_6 -->
+	<div class="clear"></div>
+	<div class="grid_1 suffix_11">
+		<p>
+			60
+		</p>
+	</div>
+	<!-- end .grid_1.suffix_11 -->
+	<div class="clear"></div>
+	<div class="grid_1 prefix_1 suffix_10">
+		<p>
+			60
+		</p>
+	</div>
+	<!-- end .grid_1.prefix_1.suffix_10 -->
+	<div class="clear"></div>
+	<div class="grid_1 prefix_2 suffix_9">
+		<p>
+			60
+		</p>
+	</div>
+	<!-- end .grid_1.prefix_2.suffix_9 -->
+	<div class="clear"></div>
+	<div class="grid_1 prefix_3 suffix_8">
+		<p>
+			60
+		</p>
+	</div>
+	<!-- end .grid_1.prefix_3.suffix_8 -->
+	<div class="clear"></div>
+	<div class="grid_1 prefix_4 suffix_7">
+		<p>
+			60
+		</p>
+	</div>
+	<!-- end .grid_1.prefix_4.suffix_7 -->
+	<div class="clear"></div>
+	<div class="grid_1 prefix_5 suffix_6">
+		<p>
+			60
+		</p>
+	</div>
+	<!-- end .grid_1.prefix_5.suffix_6 -->
+	<div class="clear"></div>
+	<div class="grid_1 prefix_6 suffix_5">
+		<p>
+			60
+		</p>
+	</div>
+	<!-- end .grid_1.prefix_6.suffix_5 -->
+	<div class="clear"></div>
+	<div class="grid_1 prefix_7 suffix_4">
+		<p>
+			60
+		</p>
+	</div>
+	<!-- end .grid_1.prefix_7.suffix_4 -->
+	<div class="clear"></div>
+	<div class="grid_1 prefix_8 suffix_3">
+		<p>
+			60
+		</p>
+	</div>
+	<!-- end .grid_1.prefix_8.suffix_3 -->
+	<div class="clear"></div>
+	<div class="grid_1 prefix_9 suffix_2">
+		<p>
+			60
+		</p>
+	</div>
+	<!-- end .grid_1.prefix_9.suffix_2 -->
+	<div class="clear"></div>
+	<div class="grid_1 prefix_10 suffix_1">
+		<p>
+			60
+		</p>
+	</div>
+	<!-- end .grid_1.prefix_10.suffix_1 -->
+	<div class="clear"></div>
+	<div class="grid_1 prefix_11">
+		<p>
+			60
+		</p>
+	</div>
+	<!-- end .grid_1.prefix_11 -->
+	<div class="clear"></div>
+	<div class="grid_6 push_6">
+		<div class="grid_1 alpha">
+			<p>
+				60
+			</p>
+		</div>
+		<!-- end .grid_1.alpha -->
+		<div class="grid_5 omega">
+			<p>
+				380
+			</p>
+		</div>
+		<!-- end .grid_5.omega -->
+		<div class="clear"></div>
+		<div class="grid_3 alpha">
+			<p>
+				220
+			</p>
+		</div>
+		<!-- end .grid_3.alpha -->
+		<div class="grid_3 omega">
+			<p>
+				220
+			</p>
+		</div>
+		<!-- end .grid_3.omega -->
+		<div class="clear"></div>
+	</div>
+	<!-- end .grid_6.push_6 -->
+	<div class="grid_6 pull_6">
+		<div class="grid_3 alpha">
+			<p>
+				220
+			</p>
+		</div>
+		<!-- end .grid_3.alpha -->
+		<div class="grid_3 omega">
+			<p>
+				220
+			</p>
+		</div>
+		<!-- end .grid_3.omega -->
+		<div class="clear"></div>
+		<div class="grid_1 alpha">
+			<p>
+				60
+			</p>
+		</div>
+		<!-- end .grid_1.alpha -->
+		<div class="grid_5 omega">
+			<p>
+				380
+			</p>
+		</div>
+		<!-- end .grid_5.omega -->
+		<div class="clear"></div>
+	</div>
+	<!-- end .grid_6.pull_6 -->
+	<div class="clear"></div>
+</div>
+<!-- end .container_12 -->
+<div class="container_12" id="c3">
+	<h2>
+		12 Column Grid
+	</h2>
+	<div class="grid_12">
+		<p>
+			940
+		</p>
+	</div>
+	<!-- end .grid_12 -->
+	<div class="clear"></div>
+	<div class="grid_1">
+		<p>
+			60
+		</p>
+	</div>
+	<!-- end .grid_1 -->
+	<div class="grid_11">
+		<p>
+			860
+		</p>
+	</div>
+	<!-- end .grid_11 -->
+	<div class="clear"></div>
+	<div class="grid_2">
+		<p>
+			140
+		</p>
+	</div>
+	<!-- end .grid_2 -->
+	<div class="grid_10">
+		<p>
+			780
+		</p>
+	</div>
+	<!-- end .grid_10 -->
+	<div class="clear"></div>
+	<div class="grid_3">
+		<p>
+			220
+		</p>
+	</div>
+	<!-- end .grid_3 -->
+	<div class="grid_9">
+		<p>
+			700
+		</p>
+	</div>
+	<!-- end .grid_9 -->
+	<div class="clear"></div>
+	<div class="grid_4">
+		<p>
+			300
+		</p>
+	</div>
+	<!-- end .grid_4 -->
+	<div class="grid_8">
+		<p>
+			620
+		</p>
+	</div>
+	<!-- end .grid_8 -->
+	<div class="clear"></div>
+	<div class="grid_5">
+		<p>
+			380
+		</p>
+	</div>
+	<!-- end .grid_5 -->
+	<div class="grid_7">
+		<p>
+			540
+		</p>
+	</div>
+	<!-- end .grid_7 -->
+	<div class="clear"></div>
+	<div class="grid_6">
+		<p>
+			460
+		</p>
+	</div>
+	<!-- end .grid_6 -->
+	<div class="grid_6">
+		<p>
+			460
+		</p>
+	</div>
+	<!-- end .grid_6 -->
+	<div class="clear"></div>
+	<div class="grid_1 suffix_11">
+		<p>
+			60
+		</p>
+	</div>
+	<!-- end .grid_1.suffix_11 -->
+	<div class="clear"></div>
+	<div class="grid_1 prefix_1 suffix_10">
+		<p>
+			60
+		</p>
+	</div>
+	<!-- end .grid_1.prefix_1.suffix_10 -->
+	<div class="clear"></div>
+	<div class="grid_1 prefix_2 suffix_9">
+		<p>
+			60
+		</p>
+	</div>
+	<!-- end .grid_1.prefix_2.suffix_9 -->
+	<div class="clear"></div>
+	<div class="grid_1 prefix_3 suffix_8">
+		<p>
+			60
+		</p>
+	</div>
+	<!-- end .grid_1.prefix_3.suffix_8 -->
+	<div class="clear"></div>
+	<div class="grid_1 prefix_4 suffix_7">
+		<p>
+			60
+		</p>
+	</div>
+	<!-- end .grid_1.prefix_4.suffix_7 -->
+	<div class="clear"></div>
+	<div class="grid_1 prefix_5 suffix_6">
+		<p>
+			60
+		</p>
+	</div>
+	<!-- end .grid_1.prefix_5.suffix_6 -->
+	<div class="clear"></div>
+	<div class="grid_1 prefix_6 suffix_5">
+		<p>
+			60
+		</p>
+	</div>
+	<!-- end .grid_1.prefix_6.suffix_5 -->
+	<div class="clear"></div>
+	<div class="grid_1 prefix_7 suffix_4">
+		<p>
+			60
+		</p>
+	</div>
+	<!-- end .grid_1.prefix_7.suffix_4 -->
+	<div class="clear"></div>
+	<div class="grid_1 prefix_8 suffix_3">
+		<p>
+			60
+		</p>
+	</div>
+	<!-- end .grid_1.prefix_8.suffix_3 -->
+	<div class="clear"></div>
+	<div class="grid_1 prefix_9 suffix_2">
+		<p>
+			60
+		</p>
+	</div>
+	<!-- end .grid_1.prefix_9.suffix_2 -->
+	<div class="clear"></div>
+	<div class="grid_1 prefix_10 suffix_1">
+		<p>
+			60
+		</p>
+	</div>
+	<!-- end .grid_1.prefix_10.suffix_1 -->
+	<div class="clear"></div>
+	<div class="grid_1 prefix_11">
+		<p>
+			60
+		</p>
+	</div>
+	<!-- end .grid_1.prefix_11 -->
+	<div class="clear"></div>
+	<div class="grid_6 push_6">
+		<div class="grid_1 alpha">
+			<p>
+				60
+			</p>
+		</div>
+		<!-- end .grid_1.alpha -->
+		<div class="grid_5 omega">
+			<p>
+				380
+			</p>
+		</div>
+		<!-- end .grid_5.omega -->
+		<div class="clear"></div>
+		<div class="grid_3 alpha">
+			<p>
+				220
+			</p>
+		</div>
+		<!-- end .grid_3.alpha -->
+		<div class="grid_3 omega">
+			<p>
+				220
+			</p>
+		</div>
+		<!-- end .grid_3.omega -->
+		<div class="clear"></div>
+	</div>
+	<!-- end .grid_6.push_6 -->
+	<div class="grid_6 pull_6">
+		<div class="grid_3 alpha">
+			<p>
+				220
+			</p>
+		</div>
+		<!-- end .grid_3.alpha -->
+		<div class="grid_3 omega">
+			<p>
+				220
+			</p>
+		</div>
+		<!-- end .grid_3.omega -->
+		<div class="clear"></div>
+		<div class="grid_1 alpha">
+			<p>
+				60
+			</p>
+		</div>
+		<!-- end .grid_1.alpha -->
+		<div class="grid_5 omega">
+			<p>
+				380
+			</p>
+		</div>
+		<!-- end .grid_5.omega -->
+		<div class="clear"></div>
+	</div>
+	<!-- end .grid_6.pull_6 -->
+	<div class="clear"></div>
+</div>
+<!-- end .container_12 -->
+<div class="container_12" id="c4">
+	<h2>
+		12 Column Grid
+	</h2>
+	<div class="grid_12">
+		<p>
+			940
+		</p>
+	</div>
+	<!-- end .grid_12 -->
+	<div class="clear"></div>
+	<div class="grid_1">
+		<p>
+			60
+		</p>
+	</div>
+	<!-- end .grid_1 -->
+	<div class="grid_11">
+		<p>
+			860
+		</p>
+	</div>
+	<!-- end .grid_11 -->
+	<div class="clear"></div>
+	<div class="grid_2">
+		<p>
+			140
+		</p>
+	</div>
+	<!-- end .grid_2 -->
+	<div class="grid_10">
+		<p>
+			780
+		</p>
+	</div>
+	<!-- end .grid_10 -->
+	<div class="clear"></div>
+	<div class="grid_3">
+		<p>
+			220
+		</p>
+	</div>
+	<!-- end .grid_3 -->
+	<div class="grid_9">
+		<p>
+			700
+		</p>
+	</div>
+	<!-- end .grid_9 -->
+	<div class="clear"></div>
+	<div class="grid_4">
+		<p>
+			300
+		</p>
+	</div>
+	<!-- end .grid_4 -->
+	<div class="grid_8">
+		<p>
+			620
+		</p>
+	</div>
+	<!-- end .grid_8 -->
+	<div class="clear"></div>
+	<div class="grid_5">
+		<p>
+			380
+		</p>
+	</div>
+	<!-- end .grid_5 -->
+	<div class="grid_7">
+		<p>
+			540
+		</p>
+	</div>
+	<!-- end .grid_7 -->
+	<div class="clear"></div>
+	<div class="grid_6">
+		<p>
+			460
+		</p>
+	</div>
+	<!-- end .grid_6 -->
+	<div class="grid_6">
+		<p>
+			460
+		</p>
+	</div>
+	<!-- end .grid_6 -->
+	<div class="clear"></div>
+	<div class="grid_1 suffix_11">
+		<p>
+			60
+		</p>
+	</div>
+	<!-- end .grid_1.suffix_11 -->
+	<div class="clear"></div>
+	<div class="grid_1 prefix_1 suffix_10">
+		<p>
+			60
+		</p>
+	</div>
+	<!-- end .grid_1.prefix_1.suffix_10 -->
+	<div class="clear"></div>
+	<div class="grid_1 prefix_2 suffix_9">
+		<p>
+			60
+		</p>
+	</div>
+	<!-- end .grid_1.prefix_2.suffix_9 -->
+	<div class="clear"></div>
+	<div class="grid_1 prefix_3 suffix_8">
+		<p>
+			60
+		</p>
+	</div>
+	<!-- end .grid_1.prefix_3.suffix_8 -->
+	<div class="clear"></div>
+	<div class="grid_1 prefix_4 suffix_7">
+		<p>
+			60
+		</p>
+	</div>
+	<!-- end .grid_1.prefix_4.suffix_7 -->
+	<div class="clear"></div>
+	<div class="grid_1 prefix_5 suffix_6">
+		<p>
+			60
+		</p>
+	</div>
+	<!-- end .grid_1.prefix_5.suffix_6 -->
+	<div class="clear"></div>
+	<div class="grid_1 prefix_6 suffix_5">
+		<p>
+			60
+		</p>
+	</div>
+	<!-- end .grid_1.prefix_6.suffix_5 -->
+	<div class="clear"></div>
+	<div class="grid_1 prefix_7 suffix_4">
+		<p>
+			60
+		</p>
+	</div>
+	<!-- end .grid_1.prefix_7.suffix_4 -->
+	<div class="clear"></div>
+	<div class="grid_1 prefix_8 suffix_3">
+		<p>
+			60
+		</p>
+	</div>
+	<!-- end .grid_1.prefix_8.suffix_3 -->
+	<div class="clear"></div>
+	<div class="grid_1 prefix_9 suffix_2">
+		<p>
+			60
+		</p>
+	</div>
+	<!-- end .grid_1.prefix_9.suffix_2 -->
+	<div class="clear"></div>
+	<div class="grid_1 prefix_10 suffix_1">
+		<p>
+			60
+		</p>
+	</div>
+	<!-- end .grid_1.prefix_10.suffix_1 -->
+	<div class="clear"></div>
+	<div class="grid_1 prefix_11">
+		<p>
+			60
+		</p>
+	</div>
+	<!-- end .grid_1.prefix_11 -->
+	<div class="clear"></div>
+	<div class="grid_6 push_6">
+		<div class="grid_1 alpha">
+			<p>
+				60
+			</p>
+		</div>
+		<!-- end .grid_1.alpha -->
+		<div class="grid_5 omega">
+			<p>
+				380
+			</p>
+		</div>
+		<!-- end .grid_5.omega -->
+		<div class="clear"></div>
+		<div class="grid_3 alpha">
+			<p>
+				220
+			</p>
+		</div>
+		<!-- end .grid_3.alpha -->
+		<div class="grid_3 omega">
+			<p>
+				220
+			</p>
+		</div>
+		<!-- end .grid_3.omega -->
+		<div class="clear"></div>
+	</div>
+	<!-- end .grid_6.push_6 -->
+	<div class="grid_6 pull_6">
+		<div class="grid_3 alpha">
+			<p>
+				220
+			</p>
+		</div>
+		<!-- end .grid_3.alpha -->
+		<div class="grid_3 omega">
+			<p>
+				220
+			</p>
+		</div>
+		<!-- end .grid_3.omega -->
+		<div class="clear"></div>
+		<div class="grid_1 alpha">
+			<p>
+				60
+			</p>
+		</div>
+		<!-- end .grid_1.alpha -->
+		<div class="grid_5 omega">
+			<p>
+				380
+			</p>
+		</div>
+		<!-- end .grid_5.omega -->
+		<div class="clear"></div>
+	</div>
+	<!-- end .grid_6.pull_6 -->
+	<div class="clear"></div>
+</div>
+<!-- end .container_12 -->
+
+</body>
+</html>
