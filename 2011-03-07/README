@@ -1,10 +1,16 @@
-Here are the projects for the three groups. For each, you may need to run:
+Here are the projects for the three groups. For each project, cd into the 
+project folder and then run:
 
    bundle install
 
-In the project folder to fill dependencies. According to group 1 there are
-some Mac OS specific gems enabled to help with the unit tests. You may
-need to disable them to run these apps on different platforms.
+Once the depencies are satisified then run:
+
+   rake db:migrate
+   rails server
+
+According to group 1 there are some Mac OS specific gems enabled to help 
+with the unit tests. You may need to disable them to run these apps on 
+different platforms.
 
 group 1: url http://localhost:3000/tasks
 group 2: url http://localhost:3000/
