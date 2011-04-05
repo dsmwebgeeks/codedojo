@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+    <%= stylesheet_link_tag "application" %>
+    <%= javascript_include_tag :defaults %>
+    <%= csrf_meta_tag %>
+    <%= yield(:head) %>
+  </head>
+  <body>
+    <div id="container">
+        <nav>
+        <p id="logo" class=""><a href="/tasks">TODO<span class="alt">.be</span></a></p>
+          <ul>
+            <li><%= link_to "Tasks", tasks_path, :id => "homenav" %></li>
+            <li><%= link_to "My Tasks", tasks_path(:my=>1), :id => "homenav" %></li>
+            <li><%= link_to "Completed", tasks_path(:completed=>1), :id => "completednav" %></li>
+            <li><%= link_to "New Task", new_task_path, :id => "newnav" %></li>
+            <li>
+              <% if user_signed_in? %>
+              <%= link_to "Sign Out", destroy_user_session_path %>
+              <% else %>
+              <%= link_to "Sign in", new_user_session_path %>
+              <% end %>
+            </li>
+          </ul>
+        </nav>
+<% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, :id => "flash_#{name}" %>
+      <% end %>
+      <%= content_tag :h1, yield(:title) if show_title? %>
+      <%= yield %>
+    </div>
+  </body>
+</html>

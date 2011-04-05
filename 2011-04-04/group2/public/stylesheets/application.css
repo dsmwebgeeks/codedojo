@@ -1,0 +1,137 @@
+@import url(blueprint/screen.css);
+
+body {
+  background-color: #E5ECF9;
+  font-size: 92%;
+}
+/* begin app specific styles */
+#logo {
+  font-size: 24pt;
+}
+#logo a {
+  color: black;
+  text-decoration: none;
+}
+#logo span.alt {
+  font-size: 42px;
+}
+nav ul {
+  float: right;
+}
+nav li, nav p {
+  display: inline;
+}
+nav li a {
+  font-size: 16px;
+  padding-left: 20px;
+  background-size: 18px;
+  margin-left: 8px;
+}
+#homenav {
+  background: transparent url(../images/icons/001_20.png) no-repeat left center;
+}
+#completednav {
+  background: transparent url(../images/icons/001_06.png) no-repeat left center;
+}
+#newnav {
+  background: transparent url(../images/icons/001_01.png) no-repeat left center;
+}
+#addbutton {
+  background: transparent url(../images/icons/001_01.png) no-repeat left center;
+  padding-left: 28px;
+  font-size: 24px;
+  text-decoration: none;
+  color: green;
+}
+.deletebutton {
+  background: transparent url(../images/icons/001_05.png) no-repeat center center;
+  display: block;
+  height: 24px;
+  width: 24px;
+  overflow: hidden;
+  text-indent: -24px;
+}
+th {
+  text-align: left;
+}
+td, th {
+  padding-left: 12px;
+}
+td:first-child, th:first-child {
+  padding-left: 6px;
+}
+
+/* begin auto-generated stuff */
+a img {
+  border: none;
+}
+
+a {
+  color: #0000FF;
+}
+
+.clear {
+  clear: both;
+  height: 0;
+  overflow: hidden;
+}
+
+#container {
+  width: 650px;
+  margin: 0 auto;
+  background-color: #FFF;
+  padding: 20px 40px;
+  border: solid 1px black;
+  margin-top: 20px;
+  -moz-box-shadow: 5px 5px 5px #ccc;
+  -webkit-box-shadow: 5px 5px 5px #ccc;
+  box-shadow: 5px 5px 5px #ccc;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+}
+
+#flash_notice, #flash_error, #flash_alert {
+  padding: 5px 8px;
+  margin: 10px 0;
+}
+
+#flash_notice {
+  background-color: #CFC;
+  border: solid 1px #6C6;
+}
+
+#flash_error, #flash_alert {
+  background-color: #FCC;
+  border: solid 1px #C66;
+}
+
+.fieldWithErrors {
+  display: inline;
+}
+
+.error_messages {
+  width: 400px;
+  border: 2px solid #CF0000;
+  padding: 0px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+.error_messages h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 10px;
+  margin: 0;
+  background-color: #c00;
+  color: #fff;
+}
+
+.error_messages p {
+  margin: 8px 10px;
+}
+
+.error_messages ul {
+  margin: 0;
+}
