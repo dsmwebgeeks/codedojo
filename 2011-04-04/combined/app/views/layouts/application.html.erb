@@ -13,7 +13,7 @@
         <p id="logo" class=""><a href="/tasks">TODO<span class="alt">r</span></a></p>
           <ul>
             <li><%= link_to "Tasks", tasks_path, :id => "homenav" %></li>
-            <li><%= link_to "My Tasks", tasks_path(:my=>1), :id => "homenav" %></li>
+            <li><%= link_to "My Tasks", tasks_path(:my=>1), :id => "mynav" %></li>
             <li><%= link_to "Completed", tasks_path(:completed=>1), :id => "completednav" %></li>
             <li><%= link_to "New Task", new_task_path, :id => "newnav" %></li>
             <% if user_signed_in? %>

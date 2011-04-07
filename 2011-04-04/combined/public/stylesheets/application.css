@@ -30,6 +30,9 @@ nav li a {
 #homenav {
   background: transparent url(../images/icons/001_20.png) no-repeat left center;
 }
+#mynav {
+  background: transparent url(../images/icons/001_55.png) no-repeat left center;
+}
 #completednav {
   background: transparent url(../images/icons/001_06.png) no-repeat left center;
 }
