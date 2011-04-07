@@ -1,0 +1,32 @@
+<h3>Task list:</h3>
+<table>
+  <tr>
+    <th>Description</th>
+    <th>Assigned To</th>
+    <th>Due date</th>
+    <th></th>
+  </tr>
+
+<% @tasks.each do |task| %>
+  <tr>
+    <td <%= 'class="completed"' if task.is_completed? %>>
+      <%= link_to truncate(task.description, :length => 50, :omission => '...'), edit_task_path(task) %></td>
+    <td><%= task.user.try(:email) %></td>
+    <td><%= task.due_date.try(:strftime, "%b %e, %Y") %></td>
+    <td><%= link_to 'X', task, :confirm => 'Are you sure?', :method => :delete, :class => "deletebutton", :title => "Delete task" %></td>
+  </tr>
+<% end %>
+ <!-- <tr>
+    <td class="quickadd" colspan="4">
+      <form action="" method="post">
+      <label>Quick add:<br />
+      <input type="text" name="description" /></form></label>
+    </td>
+  </tr>         -->
+</table>
+
+<br />
+
+<%= link_to 'New Task', new_task_path, :id => "addbutton" %>
+
+<% content_for(:title) { 'Tasks' } %>
