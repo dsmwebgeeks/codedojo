@@ -1,10 +1,14 @@
 class TasksController < ApplicationController
+
   # GET /tasks
   # GET /tasks.xml
   def index
-    completed = !params[:completed].blank?
-    @tasks = Task.where(:is_completed => completed)
-    @num_tasks = Task.where(:is_completed => true).count()
+    p params
+    opts = {}
+    opts[:is_completed] = params[:completed] unless !params[:completed].blank?
+    opts[:user] = current_user unless params[:my].blank?
+    @tasks = Task.where(opts)
+    @num_tasks = @tasks.length
 
     respond_to do |format|
       format.html # index.html.erb
@@ -28,6 +32,7 @@ class TasksController < ApplicationController
   # GET /tasks/new.xml
   def new
     @task = Task.new
+    @users = User.all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -38,6 +43,7 @@ class TasksController < ApplicationController
   # GET /tasks/1/edit
   def edit
     @task = Task.find(params[:id])
+    @users = User.all
   end
 
   # POST /tasks

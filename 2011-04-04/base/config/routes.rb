@@ -1,4 +1,7 @@
 ToDoApp::Application.routes.draw do
+  root :to => "tasks#index"
+  devise_for :users
+
   resources :tasks
 
   # The priority is based upon order of creation:

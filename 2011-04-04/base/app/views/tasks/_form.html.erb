@@ -15,10 +15,14 @@
     <%= f.label :description %><br />
     <%= f.text_field :description %>
   </div>
-  <div class="field">
-    <%= f.label :is_completed %><br />
-    <%= f.check_box :is_completed %>
-  </div>
+    <div class="field">
+      <%= f.label :is_completed %><br />
+      <%= f.check_box :is_completed %>
+    </div>
+    <div class="field">
+      <%= f.label :user %><br />
+      <%= f.collection_select :user, @users, :id, :email %>
+    </div>
   <div class="field">
     <%= f.label :due_date %><br />
     <%= f.datetime_select :due_date %>
