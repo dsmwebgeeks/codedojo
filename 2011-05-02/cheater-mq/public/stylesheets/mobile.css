@@ -1,0 +1,297 @@
+@import url(blueprint/typography.css); /* some nice typography defauls */
+
+/* some base styles */
+
+
+h1,
+h2 {
+    font-weight: 800;
+    font-style: normal;
+}
+
+h1 {
+    margin-bottom: .5em;
+    font-size: 3em; /* 48 / 16 = 3 */
+    line-height: 1.2;
+}
+
+h2 {
+    margin-bottom: .5em;
+    font-size: 2em; /* 36 / 16 = 2 */
+    line-height: 1.2;
+}
+
+h3 {
+    margin-bottom: .5em;
+    font-size: 1.5em; /* 24 / 16 = 1.5 */
+    line-height: 1.3;
+}
+
+p,
+ol,
+ul,
+small {
+    margin-bottom: 1.5em;
+    font-size: .875em; /* 14 / 16 = .875 */
+}
+
+small {
+    display: block;
+}
+
+ul,
+ol {
+    list-style-type: none;
+    margin: 0 0 1.5em -24px;
+    padding-left: 24px;
+}
+
+li {
+    margin-bottom: .75em;
+}
+
+li p {
+    font-size: 1em; /* 16 / 16 = 1 */
+}
+
+i,
+em {
+    font-style: italic;
+}
+
+a {
+    color: #0000FF;
+}
+
+a,
+a:visited {
+    outline: none;
+    text-decoration: underline;
+}
+
+a:hover {
+    outline: none;
+    text-decoration: underline;
+}
+
+.clear {
+    clear: both;
+    height: 0;
+    overflow: hidden;
+}
+
+/* gives a nice little "button press" feel to the links */
+a:active,
+a:focus {
+    position: relative;
+    top: 1px;
+    outline: none;
+
+}
+
+.alt {
+    color: #666;
+    font-family: "Warnock Pro", "Goudy Old Style", "Palatino", "Book Antiqua", Georgia, "Droid Serif" serif;
+    font-style: italic;
+    font-weight: normal;
+}
+
+/* App specific styles
+ * Some of these get overridden in application.css
+ * if they're specific to the desktop version
+ */
+
+  body {
+    background-color: #E5ECF9;
+    padding: 5px;
+}
+
+#container {
+    position: relative;
+    padding: 10px;
+    margin: 0 auto;
+    background-color: #FFF;
+    border: solid 1px black;
+    -moz-box-shadow: 5px 5px 5px #ccc;
+    -webkit-box-shadow: 5px 5px 5px #ccc;
+    box-shadow: 5px 5px 5px #ccc;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+}
+
+.footer {
+    clear: both;
+}
+
+/* header area */
+#logo {
+    font-size: 24pt;
+    margin-bottom: 10px;
+}
+
+#logo a {
+    color: black;
+    text-decoration: none;
+}
+
+#logo span.alt {
+    font-size: 20pt;
+}
+
+/* nav area */
+
+nav p {
+    margin: 0;
+}
+
+nav ul {
+}
+
+nav li {
+    display: inline;
+}
+
+nav li a {
+    font-size: 14px;
+    padding-left: 14px;
+    margin-left: 4px;
+}
+
+#homenav {
+    background: transparent url(../images/icons/001_20.png) no-repeat left center;
+    display: none;
+}
+
+#mynav {
+    background: transparent url(../images/icons/001_55.png) no-repeat left center;
+    -webkit-background-size: 12px;
+    background-size: 12px;
+}
+
+#completednav {
+    background: transparent url(../images/icons/001_06.png) no-repeat left center;
+    -webkit-background-size: 12px;
+    background-size: 12px;
+}
+
+#newnav {
+    background: transparent url(../images/icons/001_01.png) no-repeat left center;
+    -webkit-background-size: 12px;
+    background-size: 12px;
+}
+
+/* shows the user name and a log out button
+ * At the top of the desktop page but at the bottom
+ * of the mobile page
+ */
+
+ #userbanner {
+    clear: both;
+    float: right;
+    color: #999;
+    line-height: 28px;
+    position: absolute;
+    right: 10px;
+    bottom: 20px;
+}
+
+#userbanner span.greet {
+    display: none;
+}
+
+/* the actual task list begins */
+ol.tasks {
+    margin-bottom: 25px; /* keep this from being too close to the task list to avoid tapping it when
+                            you meant to tap the task */
+}
+ol.tasks li {
+    clear: both;
+    list-style-type: none;
+    padding-left: 5px;
+    background: -webkit-gradient(linear, left top, left bottom, from(#f0f0f0), to(#f9f9f9));
+    background: -moz-linear-gradient(top, #f0f0f0, #f9f9f9);
+    background-image: -o-linear-gradient(#f0f0f0, #f9f9f9); /* not for opera mobile :( */
+}
+
+ol.tasks li.header {
+    display: none; /* the header row to the "table" hidden on the mobile version */
+}
+
+ol.tasks li h4 {
+    margin-bottom: 8px;
+    overflow: ellipsis;
+    font-weight: bolder;
+    font-size: 18px;
+    padding-top: 5px;
+}
+
+ol.tasks li h4 a {
+    text-decoration: none;
+}
+
+ol.tasks li p {
+    margin-bottom: 8px;
+}
+
+ol.tasks li span {
+    padding-right: 10px;
+    overflow: ellipsis;
+}
+
+ol.tasks .taskassignee {
+    width: 180px;
+}
+
+ol.tasks .taskdate {
+    width: 90px;
+}
+
+/* warning / error dialog styles
+ * TODO: not yet tested on mobile
+ */
+
+#flash_notice, #flash_error, #flash_alert {
+  padding: 5px 8px;
+  margin: 10px 0;
+}
+
+#flash_notice {
+  background-color: #CFC;
+  border: solid 1px #6C6;
+}
+
+#flash_error, #flash_alert {
+  background-color: #FCC;
+  border: solid 1px #C66;
+}
+
+.fieldWithErrors {
+  display: inline;
+}
+
+.error_messages {
+  width: 400px;
+  border: 2px solid #CF0000;
+  padding: 0px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+.error_messages h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 10px;
+  margin: 0;
+  background-color: #c00;
+  color: #fff;
+}
+
+.error_messages p {
+  margin: 8px 10px;
+}
+
+.error_messages ul {
+  margin: 0;
+}

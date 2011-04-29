@@ -1,0 +1,28 @@
+<h3>Task list:</h3>
+<ol class="tasks">
+  <li class="header">
+    <h4 class="taskdescription">Description</h4>
+    <p class="taskdetails">
+    <span class="taskassignee">Assigned to</span>
+    <span class="taskdate">Due date</span>
+    </p>
+  </li>
+
+<% @tasks.each do |task| %>
+  <li class="task <%= 'completed' if task.is_completed? %>">
+    <h4>
+      <%= link_to truncate(task.description, :length => 50, :omission => '...'), edit_task_path(task) %></h4>
+    <p class="taskdetails">
+    <span class="taskassignee"><%= task.user.try(:email) %></span>
+    <span class="taskdate"><%= task.due_date.try(:strftime, "%b %e, %Y") %></span>
+    <span class="taskaction"><%= link_to 'Delete task', task, :confirm => 'Are you sure?',
+                                         :method => :delete, :class => "deletebutton", :title => "Delete task" %></span>
+    </p>
+  </li>
+<% end %>
+</ol>
+
+<p class="footer">
+<%= link_to 'New Task', new_task_path, :id => "addbutton" %>
+</p>
+<% content_for(:title) { 'Tasks' } %>

@@ -1,0 +1,133 @@
+@import url(blueprint/screen.css);
+
+body {
+    background-color: #E5ECF9;
+    font-size: 92%;
+}
+
+/* begin overrides for desktop version */
+
+#logo span.alt {
+    font-size: 42px;
+}
+
+nav ul {
+    float: right;
+}
+
+nav p {
+    display: inline;
+}
+
+nav li a {
+    font-size: 16px;
+    padding-left: 20px;
+    background-size: 18px;
+    margin-left: 8px;
+}
+
+#homenav {
+    display: inherit; /* hidden in the mobile version */
+}
+
+#mynav {
+    background-size: 18px;
+}
+
+#completednav {
+    background-size: 18px;
+}
+
+#newnav {
+    background-size: 18px;
+}
+
+#userbanner span.greet {
+    display: inline; /* hidden in the mobile version */
+}
+
+#userbanner {
+    position: relative; /* absolutely positioned in mobile version */
+}
+
+#addbutton {
+    background: transparent url(../images/icons/001_01.png) no-repeat left center;
+    padding-left: 28px;
+    font-size: 24px;
+    text-decoration: none;
+    color: green;
+}
+
+.deletebutton { /* this is just a small link in mobile version */
+    background: transparent url(../images/icons/001_05.png) no-repeat center center;
+    display: block;
+    height: 24px;
+    width: 24px;
+    overflow: hidden;
+    text-indent: -50px;
+}
+
+/* begin auto-generated stuff */
+
+#container {
+    width: 650px;
+    margin: 0 auto;
+    background-color: #FFF;
+    padding: 20px 40px;
+    border: solid 1px black;
+    margin-top: 20px;
+    -moz-box-shadow: 5px 5px 5px #ccc;
+    -webkit-box-shadow: 5px 5px 5px #ccc;
+    box-shadow: 5px 5px 5px #ccc;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+}
+
+/* in the desktop version the tasks appear more like a table */
+ol.tasks {
+    padding-left: 0;
+}
+
+ol.tasks li {
+    clear: both;
+    list-style-type: none;
+}
+
+ol.tasks li.header {
+    font-weight: bold;
+    display: inherit;
+}
+
+ol.tasks li h4 {
+    display: block;
+    float: left;
+    width: 260px;
+    margin-bottom: 8px;
+    overflow: ellipsis;
+}
+
+ol.tasks li p {
+    line-height: 24px;
+}
+
+ol.tasks li span {
+    display: block;
+    float: left;
+    padding-left: 10px;
+    overflow: ellipsis;
+}
+
+ol.tasks .taskassignee {
+    margin: 7px 0 0 0;
+    width: 180px;
+}
+
+ol.tasks .taskdate {
+    margin: 7px 0 0 0;
+    width: 90px;
+}
+
+ol.tasks .taskaction {
+    display: inline;
+}
