@@ -1,0 +1,14 @@
+body { overflow-x:visible !important; }
+#topnav:before, #topnav:after {
+content: "";
+position:inherit;
+top: 0;
+bottom: 0;
+width:0;
+}
+#topnav:before {
+right:0;
+}
+#topnav:after {
+left:0;
+}
