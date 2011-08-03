@@ -1,0 +1,8 @@
+Works only for http://*.iowatechies.com:
+ABQIAAAABR9vvzQwlMcl8foj4bs64RTKb4TVCPxDl5s5ARCAR4jplexUjxT
+
+Example usage:
+// Note: you will need to replace the sensor parameter below with either an explicit true or false value.
+  <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=true_or_false&amp;key=ABQIAAAABR9vvzQwlMcl8foj4bs64RTKb4TVCPxDl5s5ARCAR4jplexUjxT-2ehoHc_QFYH0uK0hffjNWQRq3w" type="text/javascript"></script>
+
+See more details at http://code.google.com/apis/maps/documentation/introduction.html#Loading_the_Maps_API
