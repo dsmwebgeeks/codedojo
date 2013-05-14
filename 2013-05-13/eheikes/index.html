@@ -98,7 +98,12 @@
 <script id="p-list" type='text/x-jquery-tmpl'>
 <ul class="petitions">
     {{each results}}
-    <li>${title}</li>
+    <li>
+        <strong>${title}</strong>
+        <br>${body}
+        <br><br><em>${signatureCount} signatures received, ${signaturesNeeded} needed</em>
+        <br>
+    </li>
     {{/each}}
 </ul>
 </script>
