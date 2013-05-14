@@ -3,7 +3,7 @@ $(function() {
 
   $.getJSON(path + 'petitions/list.js')
   .done(function(data, textStatus, jqXHR) {
-    console.log(data);
+    $('#content').html($('#p-list').tmpl(data));
   })
   .fail(function(jqXHR, textStatus, errorThrown) {
     console.log(jqXHR);
