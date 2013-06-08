@@ -1,0 +1,209 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>
+  
+    Carousel template &middot; Bootstrap
+  
+</title>
+
+<!-- Bootstrap core CSS -->
+<link href="assets/css/bootstrap.css" rel="stylesheet">
+<link href="assets/swiper/idangerous.swiper.css" rel="stylesheet">
+<script defer src="assets/swiper/idangerous.swiper-1.9.min.js" type="text/JavaScript"></script>
+
+  </head>
+  <body>
+
+    <!-- Page content of course! -->
+    <!-- Custom styles for this template -->
+<style>
+
+/* GLOBAL STYLES
+-------------------------------------------------- */
+/* Padding below the footer and lighter body text */
+
+body {
+  padding-bottom: 40px;
+  color: #5a5a5a;
+}
+
+.swiper-slide {
+  position: relative;
+}
+.swiper-slide h1 {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  color: #F2EAD0;
+  text-shadow: 2px 2px #F2A0A0;
+}
+
+.swiper-slide button, .swiper-slide a {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+}
+
+.btn-primary {
+  background-color: #F2A0A0;
+  border-color: #7EBFB9;
+}
+.btn-primary:focus, .btn-primary:hover, .btn-primary:active, btn-primary.active {
+  background-color: #D9BEB8;
+  border-color: #7EBFB9;
+}
+
+
+/* Featurettes
+------------------------- */
+
+.featurette-divider {
+  margin: 80px 0; /* Space out the Bootstrap <hr> more */
+}
+.featurette {
+  padding-top: 120px; /* Vertically center images part 1: add padding above and below text. */
+  overflow: hidden; /* Vertically center images part 2: clear their floats. */
+}
+.featurette-image {
+  margin-top: -120px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
+}
+
+/* Give some space on the sides of the floated elements so text doesn't run right into it. */
+.featurette-image.pull-left {
+  margin-right: 40px;
+}
+.featurette-image.pull-right {
+  margin-left: 40px;
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+  font-size: 50px;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+/* Specify Swiper's Size: */
+.swiper-container, .swiper-slide {
+  width: 320px;
+  height: 442px;
+}
+
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 768px) {
+
+  .swiper-slide {
+    position: relative;
+  }
+  .swiper-slide h1 {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+}
+
+</style>
+
+<div class="swiper-container">
+  <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="assets/img/61479876_63b91bd2f6_o.jpg" alt="">
+        <h1>Free cupcake!</h2>
+        <button class="btn btn-primary next">Tap to redeem!</button>
+      </div>
+      
+      <div class="swiper-slide">
+        <img src="assets/img/5586524323_c707c6b447_b.jpg" alt="">
+        <h1>Just kidding!</h2>
+        <button class="btn btn-primary next">Next</button>
+      </div>
+      
+      <div class="swiper-slide">
+        <img src="assets/img/3126300862_3a70a7b89f_o.jpg" alt="">
+        <h1>Seriously? You think you'll get cupcakes from an app?</h2>
+        <button class="btn btn-primary next">Next</button>
+      </div>
+      
+      <div class="swiper-slide">
+        <img src="assets/img/3476658412_ceda98c878_b.jpg" alt="">
+        <h1>Hah!</h2>
+        <a href="#body" class="btn btn-primary">Next</a>
+      </div>
+
+  </div>
+</div>
+
+
+<!-- Marketing messaging and featurettes
+================================================== -->
+<!-- Wrap the rest of the page in another container to center all the content. -->
+  <!-- START THE FEATURETTES -->
+
+  <hr class="featurette-divider">
+<a name="body">
+  <div class="featurette">
+    <h2 class="featurette-heading">Brought to you by DSM Web Geeks. <span class="text-muted">Made with Bootstrap 3 and Swiper.</span></h2>
+    <p class="lead"><a href="http://www.idangero.us/sliders/swiper/index.php">Swiper is a hardware
+    accelerated slider</a> and <a href="http://rc.getbootstrap.com/">Bootstrap 3</a> is the latest
+    version of the <a href="http://twitter.github.io/bootstrap/">Twitter Bootstrap</a> library.</p>
+    <p><a href="#credits" class="btn btn-default">Photo Credits</a></p>
+  </div>
+
+  <hr class="featurette-divider">
+
+  <div class="featurette">
+    <a name="credits">
+    <h2 class="featurette-heading">Photo credits:</h2>
+    <ul>
+      <li><a href="http://www.flickr.com/photos/48600074651@N01/61479876/">
+        red fruits cupcate 2</a> by chotda, cc-by-nc-nd 2.0</li>
+      <li><a href="http://www.flickr.com/photos/27869077@N05/5586524323/">
+        Because You're 'The Beautiful People'</a> by Viewminder, cc-by-nc-nd 2.0</li>
+      <li><a href="http://www.flickr.com/photos/26698239@N08/3126300862/">
+        Fun with supergirl</a> by Paul Cox, cc-by-nc-nd 2.0</li>
+      <li><a href="http://www.flickr.com/photos/76686190@N00/3476658412/">
+        Two horses walk into a bar...</a> by Linda, cc-by-nc-nd 2.0</li>
+    </ul>
+  </div>
+
+  <hr class="featurette-divider">
+
+  <!-- /END THE FEATURETTES -->
+
+
+  <!-- FOOTER -->
+  <footer>
+    <p class="pull-right"><a href="#">Back to top</a></p>
+    <p>&copy; 2013 Dsm Web Geeks. &middot;</p>
+  </footer>
+
+</div><!-- /.container -->
+
+
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/bootstrap.js"></script>
+<script src="assets/js/holder/holder.js"></script>
+<script src="assets/js/application.js"></script>
+
+  </body>
+</html>
